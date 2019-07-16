@@ -24,5 +24,5 @@ def get_phone_number(url: str):
     with urllib.request.urlopen(req) as response:
         page = response.read()
         phones = set(re.findall(pattern, str(page)))
-        phones = list(map(reformat, phones))
+        phones = set(map(reformat, phones))
     return phones
